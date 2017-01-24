@@ -1,0 +1,19 @@
+ <div class="container">
+   <h1>Welcome to  Some-Kind-Of-Fantastic RPG</h1>
+   <h3>Prepare yourself to embark on an unforgettable journey!<br> Use the form below to enter in the name, and race of your character!</h3>
+   <hr>
+   <h2>New Player</h2>
+   <label>Name:</label>
+   <input #newName>
+   <label>Choose your race:</label>
+   <select #selectRace>
+     <option value="human">Human</option>
+     <option value="elf">Elf</option>
+     <option value="gnome">Gnome</option>
+     <option value="dragonborn">Dragonborn</option>
+   </select>
+   <button (click)="playerCreate(newName.value, selectRace.value)">Create Player</button>
+ </div>
+ <div *ngIf="currentPlayer">
+  <h1>Welcome {{currentPlayer.name}}, the {{currentPlayer.race}}! You have {{currentPlayer.points}} points, don't lose them.</h1>
+</div>
