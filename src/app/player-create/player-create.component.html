@@ -12,8 +12,9 @@
      <option value="gnome">Gnome</option>
      <option value="dragonborn">Dragonborn</option>
    </select>
-   <button (click)="playerCreate(newName.value, selectRace.value)">Create Player</button>
+   <button class="btn" (click)="playerCreate(newName.value, selectRace.value)">Create Player</button>
  </div>
  <div *ngIf="currentPlayer">
   <h1>Welcome {{currentPlayer.name}}, the {{currentPlayer.race}}! You have {{currentPlayer.points}} points, don't lose them.</h1>
+    <button class="btn" (click)="goToScenario(currentPlayer)">Begin!</button>
 </div>
