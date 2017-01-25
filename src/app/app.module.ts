@@ -6,6 +6,17 @@ import { AppComponent } from './app.component';
 import { PlayerCreateComponent } from './player-create/player-create.component';
 import { ScenarioComponent } from './scenario/scenario.component';
 import {MaterializeDirective} from "angular2-materialize";
+import { routing } from './app.routing';
+import { masterFirebaseConfig } from './api-key';
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
+
 
 @NgModule({
   declarations: [
@@ -17,7 +28,9 @@ import {MaterializeDirective} from "angular2-materialize";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig) 
   ],
   providers: [],
   bootstrap: [AppComponent]
